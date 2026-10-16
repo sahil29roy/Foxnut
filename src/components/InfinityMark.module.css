@@ -1,0 +1,87 @@
+.infinityWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  pointer-events: none;
+  z-index: 15;
+  transform: translate(-50%, -50%);
+  animation: infinityFloat 4s ease-in-out infinite;
+}
+
+.infinitySvg {
+  width: 58px;
+  height: 29px;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 0 8px rgba(254, 239, 223, 0.55));
+}
+
+/* Solid bold base stroke for full continuous visibility */
+.infinityBasePath {
+  stroke: var(--color-cream, #FEEFDF);
+  stroke-width: 3.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.45;
+}
+
+/* Bright traveling dash that continuously traces the infinity loops */
+.infinityActivePath {
+  stroke: #FFFFFF;
+  stroke-width: 4.2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 45 55;
+  stroke-dashoffset: 0;
+  animation: infinityTrace 2.8s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 14px rgba(254, 239, 223, 0.75));
+}
+
+@keyframes infinityTrace {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes infinityFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-3.5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .infinityWrapper {
+    animation: none;
+  }
+
+  .infinityActivePath {
+    animation: none;
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+
+  .infinityBasePath {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .infinitySvg {
+    width: 48px;
+    height: 24px;
+  }
+
+  .infinityBasePath,
+  .infinityActivePath {
+    stroke-width: 3.4;
+  }
+}

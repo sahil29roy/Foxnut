@@ -1,0 +1,290 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background);
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(24px, 4.5vw, 64px);
+}
+
+/* Center Botanical Artwork Stage - Large & Dominant */
+.artworkStage {
+  position: relative;
+  height: clamp(520px, 78vh, 780px);
+  aspect-ratio: 1366 / 768;
+  max-width: 95vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.botanicalArtwork {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Bold Animated Infinity Symbol Centered on Lower Flower Stem (Dantal) */
+.stemInfinity {
+  position: absolute;
+  left: 53.2%;
+  top: 72.5%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* Editorial Text Positioning System - Horizontal Band Around Flower */
+.editorialOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.textBlock {
+  position: absolute;
+  font-family: var(--font-editorial), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(11.5px, 0.85vw, 13px);
+  line-height: 1.48;
+  letter-spacing: 0.03em;
+  color: var(--color-cream);
+  user-select: none;
+}
+
+/* 1. Top-Left: "A of many" | "seed ideas" */
+.seedIdeasBlock {
+  top: clamp(28%, 32vh, 37%);
+  left: clamp(28px, 5.2vw, 85px);
+  display: flex;
+  gap: clamp(16px, 1.8vw, 28px);
+  align-items: flex-start;
+}
+
+.seedCol {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. fn.d Stylistic Badge placed adjacent & slightly below seed ideas */
+.fndBadge {
+  top: clamp(38%, 41vh, 46%);
+  left: clamp(160px, 17vw, 255px);
+  font-family: "Georgia", "Times New Roman", serif;
+  font-style: italic;
+  font-size: clamp(14px, 1.05vw, 16px);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-cream);
+  opacity: 0.95;
+}
+
+/* 3. Lower-Left Block: "From a thought to something / wort   building" - IN HORIZONTAL MID-BAND, NOT FOOTER */
+.lowerLeftBlock {
+  top: clamp(48%, 52vh, 58%);
+  left: clamp(28px, 5.2vw, 85px);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.worthBuildingRow {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(18px, 1.8vw, 30px);
+}
+
+.buildingWord {
+  display: inline-block;
+}
+
+/* 4. Middle Block (Left of Pod/Stem): "A   thought," / "set in" / "Motion." */
+.middleBlock {
+  top: clamp(48%, 52vh, 58%);
+  left: clamp(250px, 27vw, 400px);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.thoughtLine {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(10px, 1.1vw, 18px);
+}
+
+.motionEmphasis {
+  color: var(--color-cream);
+  font-weight: 500;
+}
+
+/* 5. Right-Middle Block (Beside Pod): "An Idea . / Research . / Experience . / Something Distinct" */
+.rightMiddleBlock {
+  top: clamp(38%, 42vh, 47%);
+  right: clamp(250px, 27vw, 400px);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 175px;
+}
+
+.dottedRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.dot {
+  font-size: 14px;
+  line-height: 1;
+  color: var(--color-cream);
+  margin-left: 24px;
+  opacity: 0.95;
+}
+
+/* 6. Far-Right Top: "Idea ∞ Form" - Prominent Title */
+.farRightBlock {
+  top: clamp(28%, 32vh, 37%);
+  right: clamp(28px, 5.2vw, 85px);
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.infinityChar {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 1.1em;
+}
+
+/* 7. Lower-Right: "Good thinks takes a process / so do good ideas." - IN HORIZONTAL MID-BAND, NOT FOOTER */
+.lowerRightBlock {
+  top: clamp(48%, 52vh, 58%);
+  right: clamp(28px, 5.2vw, 85px);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  max-width: 260px;
+}
+
+/* Medium Laptops (1024px - 1366px) */
+@media (max-width: 1366px) and (min-width: 769px) {
+  .artworkStage {
+    height: clamp(460px, 72vh, 660px);
+  }
+
+  .middleBlock {
+    left: clamp(200px, 23vw, 320px);
+  }
+
+  .rightMiddleBlock {
+    right: clamp(200px, 23vw, 320px);
+  }
+
+  .fndBadge {
+    left: clamp(140px, 15vw, 210px);
+  }
+}
+
+/* Mobile Devices (< 768px) */
+@media (max-width: 768px) {
+  .heroSection {
+    min-height: auto;
+    padding-bottom: 24px;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    padding: 8px 20px 20px 20px;
+  }
+
+  .artworkStage {
+    height: auto;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1366 / 768;
+    margin: 8px 0 16px 0;
+  }
+
+  .stemInfinity {
+    top: 72.5%;
+    left: 53.2%;
+  }
+
+  .editorialOverlay {
+    position: static;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 14px;
+    margin-top: 6px;
+  }
+
+  .textBlock {
+    position: static;
+    font-size: 11.5px;
+    line-height: 1.42;
+  }
+
+  .seedIdeasBlock {
+    grid-column: 1;
+    grid-row: 1;
+    gap: 14px;
+  }
+
+  .fndBadge {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: -6px;
+  }
+
+  .farRightBlock {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+    justify-self: end;
+  }
+
+  .middleBlock {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .rightMiddleBlock {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: auto;
+  }
+
+  .lowerLeftBlock {
+    grid-column: 1;
+    grid-row: 4;
+    gap: 4px;
+  }
+
+  .lowerRightBlock {
+    grid-column: 2;
+    grid-row: 4;
+    text-align: right;
+    justify-self: end;
+    max-width: 100%;
+  }
+}
